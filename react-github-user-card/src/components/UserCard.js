@@ -9,11 +9,11 @@ const UserCard = ({ userData }) => {
                 </div>
                 <div>
                     <h2>{userData.login}</h2>
-                    <h3><a href={userData.html_url}>https://github.com/Notesong</a></h3>
+                    <h3><a href={userData.html_url}>{userData.html_url}</a></h3>
                 </div>
             </div>
             <div className="github-chart">
-                <img src="http://ghchart.rshah.org/notesong" alt="Notesong's Github chart" />
+                <img src={`http://ghchart.rshah.org/${userData.login}`} alt={`${userData.login}'s Github chart`} />
             </div>
         </div>
     )
