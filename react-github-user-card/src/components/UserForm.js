@@ -2,17 +2,18 @@ import React from 'react';
 
 class UserForm extends React.Component {
 
-    // sets up an empty new task state
+    // sets up an empty new user state
     state = {
         newUser: ''
     };
 
-    // handles any input changes in the new task form
+    // handles any input changes in the form
     handleChanges = e => {
         this.setState({...this.state, newUser: e.target.value});
     };
 
-    // adds the new task to the task list and resets the input field
+    // sets the new user to state found in App.js
+    // resets the input field
     handleSubmit = e => {
         e.preventDefault();
         this.props.changeUser(this.state.newUser);
@@ -22,7 +23,7 @@ class UserForm extends React.Component {
     render() {
         return(
             <div className='form-user'>
-                {/* new task form */}
+                {/* new user form */}
                 <form onSubmit={this.handleSubmit}>
                     <input
                         onChange={this.handleChanges}
