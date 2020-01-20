@@ -12,7 +12,7 @@
   color: white;
 }
 
-.user-card, .user-card {
+.user-card {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import UserCard from './components/UserCard';
+import Followers from './components/Followers';
 
 class App extends React.Component {
   
@@ -22,7 +23,7 @@ class App extends React.Component {
     .then(res => res.json())
     .then(githubFollowerData => {
       this.setState({...this.state, followerData: githubFollowerData})
-      console.log(this.state.userData)
+      console.log(this.state.followerData)
     })
     .catch(err => console.log("Error on fetch: ", err))
   }
@@ -35,6 +36,7 @@ class App extends React.Component {
         </header>
         <section>
           <UserCard userData={this.state.userData} />
+          <Followers followerData={this.state.followerData} />
         </section>
       </div>
     );    
