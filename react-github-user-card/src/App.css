@@ -13,15 +13,25 @@
 }
 
 .user-card {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.user-card .main {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.user-card div {
+.user-card .main div {
   padding: 2rem;
 }
 
-.user-card img {
-  width: 75%;
+.user-card .main img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.user-card .github-chart img {
+  width: 100%;
 }

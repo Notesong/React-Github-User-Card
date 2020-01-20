@@ -32,7 +32,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Github User Card</h1>
+          <h1>My Github Account</h1>
         </header>
         <section>
           <UserCard userData={this.state.userData} />
