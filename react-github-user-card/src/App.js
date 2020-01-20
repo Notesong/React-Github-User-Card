@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import UserCard from './components/UserCard';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  
+  state = {
+    userData: [],
+    followerData: []
+  };
+
+  componentDidMount() {
+    fetch('https://api.github.com/users/notesong')
+    .then(res => res.json())
+    .then(githubUserData => {
+      this.setState({...this.state, userData: githubUserData})
+      console.log(this.state.userData)
+    })
+    .catch(err => console.log("Error on fetch: ", err))
+
+    fetch('https://api.github.com/users/notesong/followers')
+    .then(res => res.json())
+    .then(githubFollowerData => {
+      this.setState({...this.state, followerData: githubFollowerData})
+      console.log(this.state.userData)
+    })
+    .catch(err => console.log("Error on fetch: ", err))
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>Github User Card</h1>
+        </header>
+        <section>
+          <UserCard userData={this.state.userData} />
+        </section>
+      </div>
+    );    
+  }
 }
 
 export default App;
