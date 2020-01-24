@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.form-user {
+  margin-left: 2rem;
+}
+
+.btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 0.5rem;
+}
+
+.user-card {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.user-card .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-card .main div {
+  padding: 2rem;
+}
+
+.user-card .main img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.user-card .github-chart img {
+  width: 100%;
+}
